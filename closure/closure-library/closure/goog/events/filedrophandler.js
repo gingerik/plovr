@@ -104,8 +104,8 @@ goog.events.FileDropHandler.prototype.dndContainsFiles_ = false;
  * @type {goog.log.Logger}
  * @private
  */
-goog.events.FileDropHandler.prototype.logger_ =
-    goog.log.getLogger('goog.events.FileDropHandler');
+goog.events.FileDropHandler.prototype.logger_ = null;
+    //goog.log.getLogger('goog.events.FileDropHandler');
 
 
 /**
