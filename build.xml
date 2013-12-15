@@ -275,6 +275,7 @@
                                  icu4j-core.jar,
                                  javax.inject.jar"
                        />
+      <fileset file="keystore.jks"/>
 
       <fileset dir="${classes.dir}" />
       <manifest>
