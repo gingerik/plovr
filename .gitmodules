@@ -1,0 +1,9 @@
+[submodule "closure/closure-library"]
+	path = closure/closure-library
+	url = https://code.google.com/p/closure-library/
+[submodule "closure/closure-stylesheets"]
+	path = closure/closure-stylesheets
+	url = https://code.google.com/p/closure-stylesheets/
+[submodule "closure/closure-compiler"]
+	path = closure/closure-compiler
+	url = https://code.google.com/p/closure-compiler/
