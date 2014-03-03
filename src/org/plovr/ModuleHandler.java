@@ -8,6 +8,7 @@ import java.util.regex.Pattern;
 import org.plovr.io.Responses;
 
 import com.google.common.base.Function;
+import com.sun.net.httpserver.Headers;
 import com.sun.net.httpserver.HttpExchange;
 
 public class ModuleHandler extends AbstractGetHandler {
@@ -43,6 +44,9 @@ public class ModuleHandler extends AbstractGetHandler {
     Function<String, String> moduleNameToUri = createModuleNameToUriConverter(
         server, exchange, config.getId());
     String code = compilation.getCodeForModule(moduleName, isDebugMode, moduleNameToUri);
+    Headers responseHeaders = exchange.getResponseHeaders();
+    responseHeaders.set("Access-Control-Allow-Origin", "*");
+    responseHeaders.set("Access-Control-Allow-Methods", "*");
     Responses.writeJs(code, config, exchange);
   }
 

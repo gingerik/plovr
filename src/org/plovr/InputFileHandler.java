@@ -138,7 +138,10 @@ public class InputFileHandler extends AbstractGetHandler {
     // that comes with the Closure Library.
     String depsJsName = Manifest.DEPS_JS_INPUT_NAME;
     if (name.equals(depsJsName)) {
-      super.setCacheHeaders(exchange.getResponseHeaders());
+      Headers responseHeaders = exchange.getResponseHeaders();
+      responseHeaders.set("Access-Control-Allow-Origin", "*");
+      responseHeaders.set("Access-Control-Allow-Methods", "*");
+      super.setCacheHeaders(responseHeaders);
       Responses.writeJs(getCodeForDepsJs(manifest), config, exchange);
       return;
     }
@@ -190,6 +193,9 @@ public class InputFileHandler extends AbstractGetHandler {
       return;
     }
 
+    Headers responseHeaders = exchange.getResponseHeaders();
+    responseHeaders.set("Access-Control-Allow-Origin", "*");
+    responseHeaders.set("Access-Control-Allow-Methods", "*");
     Responses.writeJs(code, config, exchange);
   }
 
