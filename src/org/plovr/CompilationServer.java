@@ -173,16 +173,9 @@ public final class CompilationServer implements Runnable {
    * @return the server scheme, name, and port, such as "http://localhost:9810/"
    */
   public String getServerForExchange(HttpExchange exchange) {
-    URI referrer = HttpUtil.getReferrer(exchange);
-    String scheme;
-    String host;
-    if (referrer == null) {
-      scheme = "http";
-      host = "localhost";
-    } else {
-      scheme = referrer.getScheme();
-      host = referrer.getHost();
-    }
+    // FIXME see history: what happens if you're on a remote server?
+    String scheme = isHttps ? "https" : "http";
+    String host = "localhost";
     return String.format("%s://%s:%d/", scheme, host, this.port);
   }
 }
