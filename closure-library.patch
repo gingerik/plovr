@@ -1,27 +1,26 @@
-From 5df5f3f1a7a9fdffa24d590a8f420a7f8ba960f1 Mon Sep 17 00:00:00 2001
-From: Erik Timmers <e.timmers@gmail.com>
-Date: Mon, 3 Mar 2014 23:25:36 +0100
-Subject: [PATCH] Evade plovr warnings
+From d26f5cfe02025a7e7016e459b7bc6d7edffe3a3a Mon Sep 17 00:00:00 2001
+From: Erik Timmers <erik.timmers@easygis.eu>
+Date: Thu, 10 Apr 2014 09:25:07 +0200
+Subject: [PATCH] Avert plovr warnings
 
 ---
- closure/goog/fs/error.js               | 1 -
- closure/goog/net/corsxmlhttpfactory.js | 2 +-
- closure/goog/net/xmlhttp.js            | 2 +-
- closure/goog/structs/structs.js        | 2 --
- 4 files changed, 2 insertions(+), 5 deletions(-)
+ closure/goog/debug/logger.js           |    1 -
+ closure/goog/net/corsxmlhttpfactory.js |    2 +-
+ closure/goog/net/xmlhttp.js            |    2 +-
+ 3 files changed, 2 insertions(+), 3 deletions(-)
 
-diff --git a/closure/goog/fs/error.js b/closure/goog/fs/error.js
-index c38db6c..ea70222 100644
---- a/closure/goog/fs/error.js
-+++ b/closure/goog/fs/error.js
-@@ -43,7 +43,6 @@ goog.fs.Error = function(error, action) {
- 
-   /**
-    * @type {goog.fs.Error.ErrorCode}
--   * @deprecated Use the 'name' or 'message' field instead.
-    */
-   this.code;
- 
+diff --git a/closure/goog/debug/logger.js b/closure/goog/debug/logger.js
+index 5e52443..98c9609 100644
+--- a/closure/goog/debug/logger.js
++++ b/closure/goog/debug/logger.js
+@@ -346,7 +346,6 @@ goog.debug.Logger.Level.getPredefinedLevelByValue = function(value) {
+  * name and should normally be based on the package name or class name of the
+  * subsystem, such as goog.net.BrowserChannel.
+  * @return {!goog.debug.Logger} The named logger.
+- * @deprecated use goog.log instead. http://go/goog-debug-logger-deprecated
+  */
+ goog.debug.Logger.getLogger = function(name) {
+   return goog.debug.LogManager.getLogger(name);
 diff --git a/closure/goog/net/corsxmlhttpfactory.js b/closure/goog/net/corsxmlhttpfactory.js
 index 4f8f145..185fbc6 100644
 --- a/closure/goog/net/corsxmlhttpfactory.js
@@ -48,19 +47,6 @@ index de954d0..df6a0d4 100644
    }
  };
  
-diff --git a/closure/goog/structs/structs.js b/closure/goog/structs/structs.js
-index 9b527b0..99611bf 100644
---- a/closure/goog/structs/structs.js
-+++ b/closure/goog/structs/structs.js
-@@ -169,8 +169,6 @@ goog.structs.clear = function(col) {
-  * @param {T=} opt_obj The object to be used as the value of 'this'
-  *     within {@code f}.
-  * @template T,S
-- * @deprecated Use a more specific method (e.g. goog.array.forEach,
-- *     goog.object.forEach, etc.)
-  */
- goog.structs.forEach = function(col, f, opt_obj) {
-   if (typeof col.forEach == 'function') {
 -- 
-1.9.0
+1.7.10.4
 
