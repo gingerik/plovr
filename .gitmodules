@@ -1,9 +1,12 @@
 [submodule "closure/closure-library"]
 	path = closure/closure-library
-	url = https://code.google.com/p/closure-library/
+	url = https://github.com:google/closure-library.git
 [submodule "closure/closure-stylesheets"]
 	path = closure/closure-stylesheets
-	url = https://code.google.com/p/closure-stylesheets/
+	url = https://github.com/google/closure-stylesheets.git
 [submodule "closure/closure-compiler"]
 	path = closure/closure-compiler
-	url = https://code.google.com/p/closure-compiler/
+	url = https://github.com/google/closure-compiler.git
+[submodule "closure/closure-templates"]
+	path = closure/closure-templates
+	url = https://github.com/google/closure-templates.git
