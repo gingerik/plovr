@@ -1,4 +1,4 @@
 #!/bin/sh
 
-cd closure/closure-library/
-git am ../../closure-library.patch
+cd closure/closure-compiler/
+git am ../../closure-compiler.patch

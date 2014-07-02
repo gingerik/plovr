@@ -1,0 +1,24 @@
+From c3a90803c609c087b7c474f76a74cec2e79a524f Mon Sep 17 00:00:00 2001
+From: Erik Timmers <erik.timmers@easygis.eu>
+Date: Wed, 2 Jul 2014 14:17:18 +0200
+Subject: [PATCH] Do not remove closure asserts on advanced mode
+
+---
+ src/com/google/javascript/jscomp/CompilationLevel.java |    1 -
+ 1 file changed, 1 deletion(-)
+
+diff --git a/src/com/google/javascript/jscomp/CompilationLevel.java b/src/com/google/javascript/jscomp/CompilationLevel.java
+index 08caa72..e7ae3ca 100644
+--- a/src/com/google/javascript/jscomp/CompilationLevel.java
++++ b/src/com/google/javascript/jscomp/CompilationLevel.java
+@@ -142,7 +142,6 @@ public enum CompilationLevel {
+     options.protectHiddenSideEffects = true;
+ 
+     // All the advanced optimizations.
+-    options.removeClosureAsserts = true;
+     options.reserveRawExports = true;
+     options.setRenamingPolicy(
+         VariableRenamingPolicy.ALL, PropertyRenamingPolicy.ALL_UNQUOTED);
+-- 
+1.7.10.4
+
